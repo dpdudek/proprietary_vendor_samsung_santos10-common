@@ -18,4 +18,35 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter santos103g santos10wifi santos10lte,$(TARGET_DEVICE)),)
 
-endif
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libmultidisplay
+LOCAL_SRC_FILES := proprietary/vendor/lib/libmultidisplay.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libsrv_init
+LOCAL_SRC_FILES := proprietary/vendor/lib/libsrv_init.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libsrv_um
+LOCAL_SRC_FILES := proprietary/vendor/lib/libsrv_um.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+
+include $(BUILD_PREBUILT)
+
+
+endif	
